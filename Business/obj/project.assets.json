@@ -1060,6 +1060,20 @@
           "bin/placeholder/Core.dll": {}
         }
       },
+      "DataAccess/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Entities": "1.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.3"
+        },
+        "compile": {
+          "bin/placeholder/DataAccess.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DataAccess.dll": {}
+        }
+      },
       "Entities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -3247,6 +3261,11 @@
       "path": "../Core/Core.csproj",
       "msbuildProject": "../Core/Core.csproj"
     },
+    "DataAccess/1.0.0": {
+      "type": "project",
+      "path": "../DataAccess/DataAccess.csproj",
+      "msbuildProject": "../DataAccess/DataAccess.csproj"
+    },
     "Entities/1.0.0": {
       "type": "project",
       "path": "../Entities/Entities.csproj",
@@ -3256,6 +3275,7 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "Core >= 1.0.0",
+      "DataAccess >= 1.0.0",
       "Entities >= 1.0.0"
     ]
   },
@@ -3288,6 +3308,9 @@
           "projectReferences": {
             "D:\\Projeler\\Rent_A_Car\\Core\\Core.csproj": {
               "projectPath": "D:\\Projeler\\Rent_A_Car\\Core\\Core.csproj"
+            },
+            "D:\\Projeler\\Rent_A_Car\\DataAccess\\DataAccess.csproj": {
+              "projectPath": "D:\\Projeler\\Rent_A_Car\\DataAccess\\DataAccess.csproj"
             },
             "D:\\Projeler\\Rent_A_Car\\Entities\\Entities.csproj": {
               "projectPath": "D:\\Projeler\\Rent_A_Car\\Entities\\Entities.csproj"
