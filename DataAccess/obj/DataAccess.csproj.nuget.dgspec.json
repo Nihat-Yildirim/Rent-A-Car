@@ -4,14 +4,14 @@
     "D:\\Projeler\\Rent_A_Car\\DataAccess\\DataAccess.csproj": {}
   },
   "projects": {
-    "D:\\Projeler\\Rent_A_Car\\DataAccess\\DataAccess.csproj": {
+    "D:\\Projeler\\Rent_A_Car\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projeler\\Rent_A_Car\\DataAccess\\DataAccess.csproj",
-        "projectName": "DataAccess",
-        "projectPath": "D:\\Projeler\\Rent_A_Car\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "D:\\Projeler\\Rent_A_Car\\Core\\Core.csproj",
+        "projectName": "Core",
+        "projectPath": "D:\\Projeler\\Rent_A_Car\\Core\\Core.csproj",
         "packagesPath": "C:\\Users\\Nihat\\.nuget\\packages\\",
-        "outputPath": "D:\\Projeler\\Rent_A_Car\\DataAccess\\obj\\",
+        "outputPath": "D:\\Projeler\\Rent_A_Car\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Nihat\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -45,6 +45,130 @@
               "version": "[7.0.3, )"
             }
           },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Projeler\\Rent_A_Car\\DataAccess\\DataAccess.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Projeler\\Rent_A_Car\\DataAccess\\DataAccess.csproj",
+        "projectName": "DataAccess",
+        "projectPath": "D:\\Projeler\\Rent_A_Car\\DataAccess\\DataAccess.csproj",
+        "packagesPath": "C:\\Users\\Nihat\\.nuget\\packages\\",
+        "outputPath": "D:\\Projeler\\Rent_A_Car\\DataAccess\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Nihat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\Projeler\\Rent_A_Car\\Entities\\Entities.csproj": {
+                "projectPath": "D:\\Projeler\\Rent_A_Car\\Entities\\Entities.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Projeler\\Rent_A_Car\\Entities\\Entities.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Projeler\\Rent_A_Car\\Entities\\Entities.csproj",
+        "projectName": "Entities",
+        "projectPath": "D:\\Projeler\\Rent_A_Car\\Entities\\Entities.csproj",
+        "packagesPath": "C:\\Users\\Nihat\\.nuget\\packages\\",
+        "outputPath": "D:\\Projeler\\Rent_A_Car\\Entities\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Nihat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\Projeler\\Rent_A_Car\\Core\\Core.csproj": {
+                "projectPath": "D:\\Projeler\\Rent_A_Car\\Core\\Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
           "imports": [
             "net461",
             "net462",
