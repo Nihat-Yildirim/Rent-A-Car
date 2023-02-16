@@ -1,0 +1,12 @@
+D:\Projeler\Rent_A_Car\DataAccess\bin\Debug\net6.0\DataAccess.deps.json
+D:\Projeler\Rent_A_Car\DataAccess\bin\Debug\net6.0\DataAccess.dll
+D:\Projeler\Rent_A_Car\DataAccess\bin\Debug\net6.0\DataAccess.pdb
+D:\Projeler\Rent_A_Car\DataAccess\obj\Debug\net6.0\DataAccess.csproj.AssemblyReference.cache
+D:\Projeler\Rent_A_Car\DataAccess\obj\Debug\net6.0\DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projeler\Rent_A_Car\DataAccess\obj\Debug\net6.0\DataAccess.AssemblyInfoInputs.cache
+D:\Projeler\Rent_A_Car\DataAccess\obj\Debug\net6.0\DataAccess.AssemblyInfo.cs
+D:\Projeler\Rent_A_Car\DataAccess\obj\Debug\net6.0\DataAccess.csproj.CoreCompileInputs.cache
+D:\Projeler\Rent_A_Car\DataAccess\obj\Debug\net6.0\DataAccess.dll
+D:\Projeler\Rent_A_Car\DataAccess\obj\Debug\net6.0\refint\DataAccess.dll
+D:\Projeler\Rent_A_Car\DataAccess\obj\Debug\net6.0\DataAccess.pdb
+D:\Projeler\Rent_A_Car\DataAccess\obj\Debug\net6.0\ref\DataAccess.dll
