@@ -15,7 +15,7 @@ namespace Core.CrossCuttingConcerns.Validation
             var result = validator.Validate(context);
             if (!result.IsValid)
             {
-                /*Hatayı Çekecek Kod*/
+                throw new Exception("Hatalı data");
             }
         }
     }
