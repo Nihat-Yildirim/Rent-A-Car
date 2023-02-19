@@ -85,3 +85,7 @@ D:\Projeler\Rent_A_Car\WepAPI\bin\Debug\net6.0\Business.pdb
 D:\Projeler\Rent_A_Car\WepAPI\bin\Debug\net6.0\Core.pdb
 D:\Projeler\Rent_A_Car\WepAPI\bin\Debug\net6.0\DataAccess.pdb
 D:\Projeler\Rent_A_Car\WepAPI\bin\Debug\net6.0\Entities.pdb
+D:\Projeler\Rent_A_Car\WepAPI\bin\Debug\net6.0\Autofac.dll
+D:\Projeler\Rent_A_Car\WepAPI\bin\Debug\net6.0\Autofac.Extensions.DependencyInjection.dll
+D:\Projeler\Rent_A_Car\WepAPI\bin\Debug\net6.0\Autofac.Extras.DynamicProxy.dll
+D:\Projeler\Rent_A_Car\WepAPI\bin\Debug\net6.0\Castle.Core.dll
