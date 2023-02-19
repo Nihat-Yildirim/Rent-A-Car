@@ -13,7 +13,7 @@ namespace Core.Business
         where TEntity : class,IEntity, new()
     {
         IDataResult<List<TEntity>> GetAll();
-        IDataResult<TEntity> GeyById(int id);
+        IDataResult<TEntity> GetById(int id);
         IResult Add(TEntity entity);
         IResult Update(TEntity entity);
         IResult Delete(TEntity entity);
