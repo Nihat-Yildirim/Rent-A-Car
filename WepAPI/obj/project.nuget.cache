@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "KUOton3xSxdWPWlrNGW2nrUphfpFVmoODni3rOGXwYhFKkxRT2MFS0ElAWTl8IBOngqpToDeWhXDNrIf/A6Grg==",
+  "dgSpecHash": "4DDS5WaKVs8bz/C3dl6gMzdbzViUL1OBK6JGX1iQsUur4Ngu7cUfyN22ULhPbSbhEDz+tpDlskBZS+IfFUghNg==",
   "success": true,
   "projectFilePath": "D:\\Projeler\\Rent_A_Car\\WepAPI\\WepAPI.csproj",
   "expectedPackageFiles": [
@@ -10,6 +10,7 @@
     "C:\\Users\\Nihat\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Nihat\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
     "C:\\Users\\Nihat\\.nuget\\packages\\castle.core\\4.4.0\\castle.core.4.4.0.nupkg.sha512",
+    "C:\\Users\\Nihat\\.nuget\\packages\\fluentvalidation\\11.5.0\\fluentvalidation.11.5.0.nupkg.sha512",
     "C:\\Users\\Nihat\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Nihat\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\Nihat\\.nuget\\packages\\microsoft.data.sqlclient\\5.0.1\\microsoft.data.sqlclient.5.0.1.nupkg.sha512",
