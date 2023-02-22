@@ -1,11 +1,37 @@
 {
   "Version": 1,
-  "Hash": "xMPgI6/j5CWBiXEHssiP581xt8abmUSNXAYtRvS6fNc=",
+  "Hash": "2l1LhGPYdabzt+XOdHrLC1zW2k+sd5E3ILRkdj68R0A=",
   "Source": "WepAPI",
   "BasePath": "_content/WepAPI",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "WepAPI\\wwwroot",
+      "Source": "WepAPI",
+      "ContentRoot": "D:\\Projeler\\Rent_A_Car\\WepAPI\\wwwroot\\",
+      "BasePath": "_content/WepAPI",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "D:\\Projeler\\Rent_A_Car\\WepAPI\\wwwroot\\DefaultImage.jpg",
+      "SourceId": "WepAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Projeler\\Rent_A_Car\\WepAPI\\wwwroot\\",
+      "BasePath": "_content/WepAPI",
+      "RelativePath": "DefaultImage.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\DefaultImage.jpg"
+    }
+  ]
 }
