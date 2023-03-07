@@ -91,3 +91,5 @@ D:\Projeler\Rent_A_Car\WepAPI\bin\Debug\net6.0\Autofac.Extras.DynamicProxy.dll
 D:\Projeler\Rent_A_Car\WepAPI\bin\Debug\net6.0\Castle.Core.dll
 D:\Projeler\Rent_A_Car\WepAPI\bin\Debug\net6.0\FluentValidation.dll
 D:\Projeler\Rent_A_Car\WepAPI\bin\Debug\net6.0\WepAPI.staticwebassets.runtime.json
+D:\Projeler\Rent_A_Car\WepAPI\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Binder.dll
+D:\Projeler\Rent_A_Car\WepAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

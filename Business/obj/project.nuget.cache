@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "3c+f1XlKk37EedWCWIGJQlpce95G5exZSwrbZVsaqgzNvWR4PJ/NKoCDhZbo6JwAunCktzjfsaEVHNoIvuZNPw==",
+  "dgSpecHash": "EuRrchMkS7qQZ3nH11K13lmqeP2VYdGzjDJSuK3OpK4cIhuI3uXoXIL8Vv48eWw5svvgKBjUfmNOtxYnHq2rqg==",
   "success": true,
   "projectFilePath": "D:\\Projeler\\Rent_A_Car\\Business\\Business.csproj",
   "expectedPackageFiles": [
@@ -26,6 +26,7 @@
     "C:\\Users\\Nihat\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\7.0.0\\microsoft.extensions.caching.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\Nihat\\.nuget\\packages\\microsoft.extensions.caching.memory\\7.0.0\\microsoft.extensions.caching.memory.7.0.0.nupkg.sha512",
     "C:\\Users\\Nihat\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0\\microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",
+    "C:\\Users\\Nihat\\.nuget\\packages\\microsoft.extensions.configuration.binder\\7.0.3\\microsoft.extensions.configuration.binder.7.0.3.nupkg.sha512",
     "C:\\Users\\Nihat\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\7.0.0\\microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",
     "C:\\Users\\Nihat\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\Nihat\\.nuget\\packages\\microsoft.extensions.logging\\7.0.0\\microsoft.extensions.logging.7.0.0.nupkg.sha512",

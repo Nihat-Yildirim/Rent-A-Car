@@ -7,10 +7,10 @@ namespace WepAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CarsControlller : ControllerBase
+    public class CarsController : ControllerBase
     {
         ICarService _carService;
-        public CarsControlller(ICarService carService)
+        public CarsController(ICarService carService)
         {
             _carService = carService;
         }
