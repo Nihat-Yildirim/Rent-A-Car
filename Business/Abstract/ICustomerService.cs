@@ -1,6 +1,4 @@
-﻿using Core.Business;
-using Core.Entities;
-using Core.Utilities.Results.Abstract;
+﻿using Core.Utilities.Results.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -10,7 +8,12 @@ using System.Threading.Tasks;
 
 namespace Business.Abstract
 {
-    public interface ICustomerService : IDefaultBusinessCrudMethods<Customer>
+    public interface ICustomerService
     {
+        IResult Add(Customer customer);
+        IResult Delete(Customer customer);
+        IResult Update(Customer customer);
+        IDataResult<Customer> GetById(int Id);
+        IDataResult<List<Customer>> GetAll();
     }
 }

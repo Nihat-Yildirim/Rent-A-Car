@@ -1,6 +1,5 @@
-﻿using Core.Business;
+﻿using Core.Entities.Concrete;
 using Core.Utilities.Results.Abstract;
-using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +8,12 @@ using System.Threading.Tasks;
 
 namespace Business.Abstract
 {
-    public interface IUserService : IDefaultBusinessCrudMethods<User>
+    public interface IUserService
     {
+        IResult Add(User user);
+        IResult Delete(User user);
+        IResult Update(User user);
+        IDataResult<User> GetById(int Id);
+        IDataResult<List<User>> GetAll();
     }
 }

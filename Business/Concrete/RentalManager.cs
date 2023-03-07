@@ -22,16 +22,16 @@ namespace Business.Concrete
         }
 
         [ValidationAspect(typeof(RentalValidator))]
-        public IResult Add(Rental entity)
+        public IResult Add(Rental rental)
         {
-            _rentalDal.Add(entity);
+            _rentalDal.Add(rental);
             return new SuccessResult();
         }
 
         [ValidationAspect(typeof(RentalValidator))]
-        public IResult Delete(Rental entity)
+        public IResult Delete(Rental rental)
         {
-            _rentalDal.Delete(entity);
+            _rentalDal.Delete(rental);
             return new SuccessResult();
         }
 
@@ -46,9 +46,9 @@ namespace Business.Concrete
         }
 
         [ValidationAspect(typeof(RentalValidator))]
-        public IResult Update(Rental entity)
+        public IResult Update(Rental rental)
         {
-            _rentalDal.Update(entity);
+            _rentalDal.Update(rental);
             return new SuccessResult();
         }
     }

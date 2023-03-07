@@ -1,4 +1,4 @@
-﻿using Core.Business;
+﻿using Core.Utilities.Results.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -8,7 +8,12 @@ using System.Threading.Tasks;
 
 namespace Business.Abstract
 {
-    public interface IBrandService : IDefaultBusinessCrudMethods<Brand>
+    public interface IBrandService
     {
+        IResult Add(Brand brand);
+        IResult Delete(Brand brand);
+        IResult Update(Brand brand);
+        IDataResult<Brand> GetById(int Id);
+        IDataResult<List<Brand>> GetAll();
     }
 }

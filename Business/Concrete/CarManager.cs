@@ -22,16 +22,16 @@ namespace Business.Concrete
         }
 
         [ValidationAspect(typeof(CarValidator))]
-        public IResult Add(Car entity)
+        public IResult Add(Car car)
         {
-            _carDal.Add(entity);
+            _carDal.Add(car);
             return new SuccessResult();
         }
 
         [ValidationAspect(typeof(CarValidator))]
-        public IResult Delete(Car entity)
+        public IResult Delete(Car car)
         {
-            _carDal.Delete(entity);
+            _carDal.Delete(car);
             return new SuccessResult();
         }
 
@@ -46,9 +46,9 @@ namespace Business.Concrete
         }
 
         [ValidationAspect(typeof(CarValidator))]
-        public IResult Update(Car entity)
+        public IResult Update(Car car)
         {
-            _carDal.Update(entity);
+            _carDal.Update(car);
             return new SuccessResult();
         }
     }

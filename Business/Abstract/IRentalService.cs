@@ -1,5 +1,4 @@
-﻿using Core.Business;
-using Core.Utilities.Results.Abstract;
+﻿using Core.Utilities.Results.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -9,7 +8,12 @@ using System.Threading.Tasks;
 
 namespace Business.Abstract
 {
-    public interface IRentalService : IDefaultBusinessCrudMethods<Rental>
+    public interface IRentalService
     {
+        IResult Add(Rental rental);
+        IResult Delete(Rental rental);
+        IResult Update(Rental rental);
+        IDataResult<Rental> GetById(int Id);
+        IDataResult<List<Rental>> GetAll();
     }
 }
