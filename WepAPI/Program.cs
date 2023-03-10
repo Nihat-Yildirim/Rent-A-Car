@@ -16,6 +16,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddCors(options =>
+    options.AddPolicy("myclients", builder =>
+    builder.WithOrigins("https://localhost:7051").AllowAnyMethod().AllowAnyHeader()));
+
 builder.Services.AddSingleton<IHttpContextAccessor , HttpContextAccessor>();
 ServiceTool.Create(builder.Services);
 
@@ -52,6 +56,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors("myclients");
 
 app.UseAuthentication();
 
