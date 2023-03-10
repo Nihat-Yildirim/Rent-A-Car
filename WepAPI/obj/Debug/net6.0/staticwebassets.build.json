@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "2l1LhGPYdabzt+XOdHrLC1zW2k+sd5E3ILRkdj68R0A=",
+  "Hash": "Lrj1w4MNh7FZyGYeZ3X7aDR1GAkxgi7lJcaH3u4HBEE=",
   "Source": "WepAPI",
   "BasePath": "_content/WepAPI",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "WepAPI\\wwwroot",
       "Source": "WepAPI",
-      "ContentRoot": "D:\\Projeler\\Rent_A_Car\\WepAPI\\wwwroot\\",
+      "ContentRoot": "D:\\Rent-A-Car\\WepAPI\\wwwroot\\",
       "BasePath": "_content/WepAPI",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "D:\\Projeler\\Rent_A_Car\\WepAPI\\wwwroot\\DefaultImage.jpg",
+      "Identity": "D:\\Rent-A-Car\\WepAPI\\wwwroot\\DefaultImage.jpg",
       "SourceId": "WepAPI",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Projeler\\Rent_A_Car\\WepAPI\\wwwroot\\",
+      "ContentRoot": "D:\\Rent-A-Car\\WepAPI\\wwwroot\\",
       "BasePath": "_content/WepAPI",
       "RelativePath": "DefaultImage.jpg",
       "AssetKind": "All",

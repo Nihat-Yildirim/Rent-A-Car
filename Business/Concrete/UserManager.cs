@@ -2,6 +2,7 @@
 using Core.Entities.Concrete;
 using Core.Utilities.Results.Abstract;
 using Core.Utilities.Results.Concrete;
+using Core.Utilities.Security.JWT;
 using DataAccess.Abstract;
 using System;
 using System.Collections.Generic;
@@ -16,7 +17,7 @@ namespace Business.Concrete
         IUserDal _userDal;
         public UserManager(IUserDal userDal)
         {
-            _userDal= userDal;
+            _userDal = userDal;
         }
 
         public IResult Add(User user)
@@ -30,9 +31,23 @@ namespace Business.Concrete
             return new SuccessDataResult<User>(_userDal.Get(u => u.Email == email));
         }
 
+        public IDataResult<User> GetByRefreshToken(string refreshToken)
+        {
+            return new SuccessDataResult<User>(_userDal.Get(u => u.RefreshToken == refreshToken));
+        }
+
         public IDataResult<List<OperationClaim>> GetClaims(User user)
         {
             return new SuccessDataResult<List<OperationClaim>>(_userDal.GetClaims(user));
         }
+
+        public IResult UpdateUserRefreshToken(User user, RefreshToken refreshToken)
+        {
+            user.RefreshToken = refreshToken.RefreshTokenValue;
+            user.RefreshTokenEndDate = refreshToken.RefreshTokenEndDate;
+            _userDal.Update(user);
+            return new SuccessResult();
+        }
+
     }
 }

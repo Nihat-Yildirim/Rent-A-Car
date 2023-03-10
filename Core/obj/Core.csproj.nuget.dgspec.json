@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projeler\\Rent_A_Car\\Core\\Core.csproj": {}
+    "D:\\Rent-A-Car\\Core\\Core.csproj": {}
   },
   "projects": {
-    "D:\\Projeler\\Rent_A_Car\\Core\\Core.csproj": {
+    "D:\\Rent-A-Car\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projeler\\Rent_A_Car\\Core\\Core.csproj",
+        "projectUniqueName": "D:\\Rent-A-Car\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "D:\\Projeler\\Rent_A_Car\\Core\\Core.csproj",
+        "projectPath": "D:\\Rent-A-Car\\Core\\Core.csproj",
         "packagesPath": "C:\\Users\\Nihat\\.nuget\\packages\\",
-        "outputPath": "D:\\Projeler\\Rent_A_Car\\Core\\obj\\",
+        "outputPath": "D:\\Rent-A-Car\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Nihat\\AppData\\Roaming\\NuGet\\NuGet.Config",

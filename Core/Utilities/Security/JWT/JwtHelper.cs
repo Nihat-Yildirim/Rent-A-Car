@@ -1,6 +1,8 @@
 ﻿using Core.Entities.Concrete;
 using Core.Extensions;
+using Core.Utilities.Helpers.GuidHelper;
 using Core.Utilities.Security.Encryption;
+using Core.Utilities.Security.Hashing;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System;
@@ -24,22 +26,24 @@ namespace Core.Utilities.Security.JWT
             _tokenOptions = Configuration.GetSection("TokenOptions").Get<TokenOptions>();
         }
 
-        public AccessToken CreateToken(User user, List<OperationClaim> operationClaim)
+        public AccessToken CreateAccessToken(User user, List<OperationClaim> operationClaim)
         {
             _accessTokenExpiration = DateTime.Now.AddMinutes(_tokenOptions.AccessTokenExpiration);
             var securityKey = SecurityKeyHelper.CreateSecurityKey(_tokenOptions.SecurityKey);
             var signingCredentials = SigningCredentialsHelper.CreateSigningCredentials(securityKey);
-            var jwt = CreateJwtSecurityToken(_tokenOptions,user,signingCredentials,operationClaim);
+            var jwt = CreateJwtSecurityToken(_tokenOptions, user, signingCredentials, operationClaim);
             var jwtSecurityTokenHandler = new JwtSecurityTokenHandler();
             var token = jwtSecurityTokenHandler.WriteToken(jwt);
+
             return new AccessToken
             {
-                Token  = token,
+                Token = token,
                 Expiration = _accessTokenExpiration
             };
+
         }
 
-        public JwtSecurityToken CreateJwtSecurityToken(TokenOptions tokenOptions, User user, SigningCredentials signingCredentials, List<OperationClaim> operationClaims)
+        private JwtSecurityToken CreateJwtSecurityToken(TokenOptions tokenOptions, User user, SigningCredentials signingCredentials, List<OperationClaim> operationClaims)
         {
             var jwt = new JwtSecurityToken(
                 issuer: tokenOptions.Issuer,
@@ -52,15 +56,24 @@ namespace Core.Utilities.Security.JWT
             return jwt;
         }
 
-        public IEnumerable<Claim> SetClaim(User user, List<OperationClaim> operationClaims)
+        private IEnumerable<Claim> SetClaim(User user, List<OperationClaim> operationClaims)
         {
             var claims = new List<Claim>();
             claims.AddNameIdentifier(user.Id.ToString());
             claims.AddEmail(user.Email);
             claims.AddName($"{user.FirstName} {user.LastName}");
-            claims.AddRole(operationClaims.Select(o=>o.Name).ToArray());
-            
+            claims.AddRole(operationClaims.Select(o => o.Name).ToArray());
+
             return claims;
+        }
+
+        public RefreshToken CreateRefreshToken()
+        {
+            return new RefreshToken
+            {
+                RefreshTokenValue = Convert.ToBase64String(HashingHelper.ComputeHash(GuidHelperr.CreateGuid())),
+                RefreshTokenEndDate = DateTime.Now.AddHours(5)
+            };
         }
     }
 }

@@ -26,7 +26,8 @@ namespace WepAPI.Controllers
             }
 
             var result = _authService.CreateAccessToken(userToLogin.Data);
-            if(!result.Success) 
+
+            if (!result.Success)
             {
                 return BadRequest("Token oluşturulamadı");
             }
@@ -37,7 +38,7 @@ namespace WepAPI.Controllers
         public IActionResult Register(UserForRegisterDto userForRegisterDto)
         {
             var userExcists = _authService.UserExcists(userForRegisterDto.Email);
-            if(!userExcists.Success)
+            if (!userExcists.Success)
             {
                 return BadRequest("Bu kullanıcı zaten var");
             }
@@ -49,6 +50,25 @@ namespace WepAPI.Controllers
                 return Ok(result.Data);
             }
             return BadRequest(result.Message);
+        }
+
+        [HttpPost("refreshtokenlogin")]
+        public IActionResult RefreshTokenLogin(string refreshToken)
+        {
+            var userToLogin = _authService.RefreshTokenToLogin(refreshToken);
+
+            if (!userToLogin.Success)
+            {
+                return BadRequest("Hatalı veya süresi geçmiş refresh token değeri");
+            }
+
+            var token = _authService.CreateAccessToken(userToLogin.Data);
+
+            if (!token.Success)
+            {
+                return BadRequest("Token oluşturulamadı");
+            }
+            return Ok(token);
         }
     }
 }

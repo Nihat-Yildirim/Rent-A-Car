@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Core.Entities.Concrete;
+using Core.Utilities.Business;
 using Core.Utilities.Results.Abstract;
 using Core.Utilities.Results.Concrete;
 using Core.Utilities.Security.Hashing;
@@ -24,17 +25,41 @@ namespace Business.Concrete
             _userService = userService;
         }
 
-        public IDataResult<AccessToken> CreateAccessToken(User user)
+        public IDataResult<Token> CreateAccessToken(User user)
         {
             var claims = _userService.GetClaims(user).Data;
-            var accessToken = _tokenHelper.CreateToken(user, claims);
-            return new SuccessDataResult<AccessToken>(accessToken);
+            var accessToken = _tokenHelper.CreateAccessToken(user, claims);
+
+            var userRefreshToken = new RefreshToken
+            {
+                RefreshTokenValue = user.RefreshToken,
+                RefreshTokenEndDate = user.RefreshTokenEndDate
+            };
+
+            return new SuccessDataResult<Token>(new Token
+            {
+                AccessToken = accessToken,
+                RefreshToken = userRefreshToken
+            });
+        }
+
+        public IDataResult<Token> CreateToken(User user)
+        {
+            var claims = _userService.GetClaims(user).Data;
+            var accessToken = _tokenHelper.CreateAccessToken(user, claims);
+            var refreshToken = _tokenHelper.CreateRefreshToken();
+            _userService.UpdateUserRefreshToken(user, refreshToken);
+            return new SuccessDataResult<Token>(new Token
+            {
+                AccessToken = accessToken,
+                RefreshToken = refreshToken
+            });
         }
 
         public IDataResult<User> Login(UserForLoginDto userForLoginDto)
         {
             var userToCheck = _userService.GetByMail(userForLoginDto.Email).Data;
-            if(userToCheck == null)
+            if (userToCheck == null)
             {
                 return new ErrorDataResult<User>();
             }
@@ -47,11 +72,22 @@ namespace Business.Concrete
             return new SuccessDataResult<User>(userToCheck);
         }
 
+        public IDataResult<User> RefreshTokenToLogin(string refreshToken)
+        {
+            var resultUser = _userService.GetByRefreshToken(refreshToken).Data;
+            var result = BusinessRules.Run(CheckIfRefreshTokenEndDate(resultUser.RefreshTokenEndDate));
+            if (result != null)
+            {
+                return new ErrorDataResult<User>();
+            }
+            return new SuccessDataResult<User>(resultUser);
+        }
+
         public IDataResult<User> Register(UserForRegisterDto userForRegisterDto)
         {
             byte[] passwordHash, passwordSalt;
-            HashingHelper.CreatePasswordHash(userForRegisterDto.Password,out passwordHash, out passwordSalt);
-
+            HashingHelper.CreatePasswordHash(userForRegisterDto.Password, out passwordHash, out passwordSalt);
+            var refreshTokenResult = _tokenHelper.CreateRefreshToken();
             var user = new User
             {
                 FirstName = userForRegisterDto.FirstName,
@@ -59,6 +95,8 @@ namespace Business.Concrete
                 Email = userForRegisterDto.Email,
                 PasswordHash = passwordHash,
                 PasswordSalt = passwordSalt,
+                RefreshToken = refreshTokenResult.RefreshTokenValue,
+                RefreshTokenEndDate = refreshTokenResult.RefreshTokenEndDate,
                 Status = true
             };
             _userService.Add(user);
@@ -67,11 +105,20 @@ namespace Business.Concrete
 
         public IResult UserExcists(string email)
         {
-            if(_userService.GetByMail(email).Data != null)
+            if (_userService.GetByMail(email).Data != null)
             {
                 return new ErrorResult();
             }
 
+            return new SuccessResult();
+        }
+
+        private IResult CheckIfRefreshTokenEndDate(DateTime refreshTokenEndDate)
+        {
+            if (refreshTokenEndDate == DateTime.Now)
+            {
+                return new ErrorResult();
+            }
             return new SuccessResult();
         }
     }

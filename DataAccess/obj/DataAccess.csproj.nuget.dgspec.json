@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projeler\\Rent_A_Car\\DataAccess\\DataAccess.csproj": {}
+    "D:\\Rent-A-Car\\DataAccess\\DataAccess.csproj": {}
   },
   "projects": {
-    "D:\\Projeler\\Rent_A_Car\\Core\\Core.csproj": {
+    "D:\\Rent-A-Car\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projeler\\Rent_A_Car\\Core\\Core.csproj",
+        "projectUniqueName": "D:\\Rent-A-Car\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "D:\\Projeler\\Rent_A_Car\\Core\\Core.csproj",
+        "projectPath": "D:\\Rent-A-Car\\Core\\Core.csproj",
         "packagesPath": "C:\\Users\\Nihat\\.nuget\\packages\\",
-        "outputPath": "D:\\Projeler\\Rent_A_Car\\Core\\obj\\",
+        "outputPath": "D:\\Rent-A-Car\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Nihat\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -81,14 +81,14 @@
         }
       }
     },
-    "D:\\Projeler\\Rent_A_Car\\DataAccess\\DataAccess.csproj": {
+    "D:\\Rent-A-Car\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projeler\\Rent_A_Car\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "D:\\Rent-A-Car\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "D:\\Projeler\\Rent_A_Car\\DataAccess\\DataAccess.csproj",
+        "projectPath": "D:\\Rent-A-Car\\DataAccess\\DataAccess.csproj",
         "packagesPath": "C:\\Users\\Nihat\\.nuget\\packages\\",
-        "outputPath": "D:\\Projeler\\Rent_A_Car\\DataAccess\\obj\\",
+        "outputPath": "D:\\Rent-A-Car\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Nihat\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -105,8 +105,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Projeler\\Rent_A_Car\\Entities\\Entities.csproj": {
-                "projectPath": "D:\\Projeler\\Rent_A_Car\\Entities\\Entities.csproj"
+              "D:\\Rent-A-Car\\Entities\\Entities.csproj": {
+                "projectPath": "D:\\Rent-A-Car\\Entities\\Entities.csproj"
               }
             }
           }
@@ -146,14 +146,14 @@
         }
       }
     },
-    "D:\\Projeler\\Rent_A_Car\\Entities\\Entities.csproj": {
+    "D:\\Rent-A-Car\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projeler\\Rent_A_Car\\Entities\\Entities.csproj",
+        "projectUniqueName": "D:\\Rent-A-Car\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "D:\\Projeler\\Rent_A_Car\\Entities\\Entities.csproj",
+        "projectPath": "D:\\Rent-A-Car\\Entities\\Entities.csproj",
         "packagesPath": "C:\\Users\\Nihat\\.nuget\\packages\\",
-        "outputPath": "D:\\Projeler\\Rent_A_Car\\Entities\\obj\\",
+        "outputPath": "D:\\Rent-A-Car\\Entities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Nihat\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -170,8 +170,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Projeler\\Rent_A_Car\\Core\\Core.csproj": {
-                "projectPath": "D:\\Projeler\\Rent_A_Car\\Core\\Core.csproj"
+              "D:\\Rent-A-Car\\Core\\Core.csproj": {
+                "projectPath": "D:\\Rent-A-Car\\Core\\Core.csproj"
               }
             }
           }

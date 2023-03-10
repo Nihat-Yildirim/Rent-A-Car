@@ -1,1 +1,1 @@
-{"ContentRoots":["D:\\Projeler\\Rent_A_Car\\WepAPI\\wwwroot\\"],"Root":{"Children":{"DefaultImage.jpg":{"Children":null,"Asset":{"ContentRootIndex":0,"SubPath":"DefaultImage.jpg"},"Patterns":null}},"Asset":null,"Patterns":[{"ContentRootIndex":0,"Pattern":"**","Depth":0}]}}
+{"ContentRoots":["D:\\Rent-A-Car\\WepAPI\\wwwroot\\"],"Root":{"Children":{"DefaultImage.jpg":{"Children":null,"Asset":{"ContentRootIndex":0,"SubPath":"DefaultImage.jpg"},"Patterns":null}},"Asset":null,"Patterns":[{"ContentRootIndex":0,"Pattern":"**","Depth":0}]}}

@@ -8191,11 +8191,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projeler\\Rent_A_Car\\WepAPI\\WepAPI.csproj",
+      "projectUniqueName": "D:\\Rent-A-Car\\WepAPI\\WepAPI.csproj",
       "projectName": "WepAPI",
-      "projectPath": "D:\\Projeler\\Rent_A_Car\\WepAPI\\WepAPI.csproj",
+      "projectPath": "D:\\Rent-A-Car\\WepAPI\\WepAPI.csproj",
       "packagesPath": "C:\\Users\\Nihat\\.nuget\\packages\\",
-      "outputPath": "D:\\Projeler\\Rent_A_Car\\WepAPI\\obj\\",
+      "outputPath": "D:\\Rent-A-Car\\WepAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Nihat\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -8212,8 +8212,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\Projeler\\Rent_A_Car\\Business\\Business.csproj": {
-              "projectPath": "D:\\Projeler\\Rent_A_Car\\Business\\Business.csproj"
+            "D:\\Rent-A-Car\\Business\\Business.csproj": {
+              "projectPath": "D:\\Rent-A-Car\\Business\\Business.csproj"
             }
           }
         }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "AYeeevs8G6Q3YtWPGuZetWJe7zXUnFP6WOLJhG/qmYXnsAI3j8HJsOi1cXD3mLtB7Gl64Od/i7cK+fDF6wkALw==",
+  "dgSpecHash": "PHk2VFIrgfx/EJ2aHHIBy4z16koQEOiKiVsEi6y2iEBjc5PwKXAAfHtekeXco6r2nlAryu90Gtr8VYvVDjFtng==",
   "success": true,
-  "projectFilePath": "D:\\Projeler\\Rent_A_Car\\Core\\Core.csproj",
+  "projectFilePath": "D:\\Rent-A-Car\\Core\\Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Nihat\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Nihat\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
