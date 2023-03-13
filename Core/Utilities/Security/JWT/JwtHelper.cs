@@ -40,7 +40,6 @@ namespace Core.Utilities.Security.JWT
                 Token = token,
                 Expiration = _accessTokenExpiration
             };
-
         }
 
         private JwtSecurityToken CreateJwtSecurityToken(TokenOptions tokenOptions, User user, SigningCredentials signingCredentials, List<OperationClaim> operationClaims)
