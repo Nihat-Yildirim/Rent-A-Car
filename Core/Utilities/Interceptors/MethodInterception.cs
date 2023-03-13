@@ -9,33 +9,33 @@ namespace Core.Utilities.Interceptors
 {
     public class MethodInterception : MethodInterceptionBaseAttribute
     {
-        public virtual void OnBefore(IInvocation ınvocation) { }
-        public virtual void OnAfter(IInvocation ınvocation) { }
-        public virtual void OnException(IInvocation ınvocation, Exception exception) { }
-        public virtual void OnSuccess(IInvocation ınvocation) { }
+        public virtual void OnBefore(IInvocation invocation) { }
+        public virtual void OnAfter(IInvocation invocation) { }
+        public virtual void OnException(IInvocation invocation, Exception exception) { }
+        public virtual void OnSuccess(IInvocation invocation) { }
 
-        public override void Intercept(IInvocation ınvocation)
+        public override void Intercept(IInvocation invocation)
         {
             bool isSuccess = true;
-            OnBefore(ınvocation);
+            OnBefore(invocation);
             try
             {
-                ınvocation.Proceed();
+                invocation.Proceed();
             }
             catch (Exception exception)
             {
                 isSuccess = false;
-                OnException(ınvocation, exception);
+                OnException(invocation, exception);
                 throw;
             }
             finally
             {
                 if (isSuccess)
                 {
-                    OnSuccess(ınvocation);
+                    OnSuccess(invocation);
                 }
             }
-            OnAfter(ınvocation);
+            OnAfter(invocation);
         }
 
     }

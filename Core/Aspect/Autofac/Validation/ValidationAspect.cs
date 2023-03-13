@@ -22,11 +22,11 @@ namespace Core.Aspect.Autofac.Validation
             _validatortype = validatortype;
         }
 
-        public override void OnBefore(IInvocation ınvocation)
+        public override void OnBefore(IInvocation invocation)
         {
             var validator = (IValidator)Activator.CreateInstance(_validatortype);
             var entityType = _validatortype.BaseType.GetGenericArguments()[0];
-            var entities = ınvocation.Arguments.Where(t => t.GetType() == entityType);
+            var entities = invocation.Arguments.Where(t => t.GetType() == entityType);
             foreach( var entity in entities )
             {
                 ValidationTool.Validate(validator, entity);
