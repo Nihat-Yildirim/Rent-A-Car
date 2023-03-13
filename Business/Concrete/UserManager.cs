@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Core.Aspect.Autofac.Transaction;
 using Core.Entities.Concrete;
 using Core.Utilities.Results.Abstract;
 using Core.Utilities.Results.Concrete;
@@ -20,6 +21,7 @@ namespace Business.Concrete
             _userDal = userDal;
         }
 
+        [TransactionScopeAspect]
         public IResult Add(User user)
         {
             _userDal.Add(user);

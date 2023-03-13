@@ -1,6 +1,7 @@
 ﻿using Business.Abstract;
 using Business.ValidationRules.FluentValidation;
 using Core.Aspect.Autofac.Caching;
+using Core.Aspect.Autofac.Transaction;
 using Core.Aspect.Autofac.Validation;
 using Core.Utilities.Results.Abstract;
 using Core.Utilities.Results.Concrete;
@@ -24,6 +25,7 @@ namespace Business.Concrete
 
         [ValidationAspect(typeof(RentalValidator))]
         [CacheRemoveAspect("IRentalService.Get")]
+        [TransactionScopeAspect]
         public IResult Add(Rental rental)
         {
             _rentalDal.Add(rental);
@@ -32,6 +34,7 @@ namespace Business.Concrete
 
         [ValidationAspect(typeof(RentalValidator))]
         [CacheRemoveAspect("IRentalService.Get")]
+        [TransactionScopeAspect]
         public IResult Delete(Rental rental)
         {
             _rentalDal.Delete(rental);
@@ -52,6 +55,7 @@ namespace Business.Concrete
 
         [ValidationAspect(typeof(RentalValidator))]
         [CacheRemoveAspect("IRentalService.Get")]
+        [TransactionScopeAspect]
         public IResult Update(Rental rental)
         {
             _rentalDal.Update(rental);

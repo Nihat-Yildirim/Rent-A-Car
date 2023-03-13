@@ -2,6 +2,7 @@
 using Business.BusinessAspects.Autofac;
 using Business.ValidationRules.FluentValidation;
 using Core.Aspect.Autofac.Caching;
+using Core.Aspect.Autofac.Transaction;
 using Core.Aspect.Autofac.Validation;
 using Core.Utilities.Results.Abstract;
 using Core.Utilities.Results.Concrete;
@@ -25,8 +26,9 @@ namespace Business.Concrete
         }
 
         [ValidationAspect(typeof(ColorValidator))]
-        //[SecuredOperation("color.add")]
+        [SecuredOperation("color.add")]
         [CacheRemoveAspect("IColorService.Get")]
+        [TransactionScopeAspect]
         public IResult Add(Color color)
         {
             _colorDal.Add(color);
@@ -35,6 +37,7 @@ namespace Business.Concrete
 
         [ValidationAspect(typeof(ColorValidator))]
         [CacheRemoveAspect("IColorService.Get")]
+        [TransactionScopeAspect]
         public IResult Delete(Color color)
         {
             _colorDal.Delete(color);
