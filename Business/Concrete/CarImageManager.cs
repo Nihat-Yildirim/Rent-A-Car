@@ -1,6 +1,7 @@
 ﻿using Business.Abstract;
 using Business.Constants;
 using Core.Aspect.Autofac.Caching;
+using Core.Aspect.Autofac.Performance;
 using Core.Aspect.Autofac.Transaction;
 using Core.Utilities.Business;
 using Core.Utilities.Helpers.FileHelper;
@@ -29,6 +30,7 @@ namespace Business.Concrete
 
         [CacheRemoveAspect("ICarImageService.Get")]
         [TransactionScopeAspect]
+        [PerformanceAspect(10)]
         public IResult Add(IFormFile file, CarImage carImage)
         {
             IResult result = BusinessRules.Run(CheckIfCarImageLimit(carImage.CarId));
@@ -44,6 +46,7 @@ namespace Business.Concrete
 
         [CacheRemoveAspect("ICarImageService.Get")]
         [TransactionScopeAspect]
+        [PerformanceAspect(10)]
         public IResult Delete(CarImage carImage)
         {
             _fileHelper.Delete(PathConstants.ImagePath + carImage.ImagePath);
@@ -52,12 +55,14 @@ namespace Business.Concrete
         }
 
         [CacheAspect]
+        [PerformanceAspect(15)]
         public IDataResult<List<CarImage>> GetAll()
         {
             return new SuccessDataResult<List<CarImage>>(_carImageDal.GetAll());
         }
 
         [CacheAspect]
+        [PerformanceAspect(15)]
         public IDataResult<List<CarImage>> GetByCarId(int carId)
         {
             var result = BusinessRules.Run(CheckCarImage(carId));
@@ -69,6 +74,7 @@ namespace Business.Concrete
         }
 
         [CacheAspect]
+        [PerformanceAspect(15)]
         public IDataResult<CarImage> GetByImageId(int imageId)
         {
             return new SuccessDataResult<CarImage>(_carImageDal.Get(c => c.Id == imageId));
@@ -76,6 +82,7 @@ namespace Business.Concrete
 
         [CacheRemoveAspect("ICarImageService.Get")]
         [TransactionScopeAspect]
+        [PerformanceAspect(10)]
         public IResult Update(IFormFile file, CarImage carImage)
         {
             carImage.ImagePath = _fileHelper.Update(file, PathConstants.ImagePath + carImage.ImagePath, PathConstants.ImagePath);

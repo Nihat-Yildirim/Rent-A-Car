@@ -1,6 +1,7 @@
 ﻿using Business.Abstract;
 using Business.ValidationRules.FluentValidation;
 using Core.Aspect.Autofac.Caching;
+using Core.Aspect.Autofac.Performance;
 using Core.Aspect.Autofac.Transaction;
 using Core.Aspect.Autofac.Validation;
 using Core.Utilities.Results.Abstract;
@@ -26,6 +27,7 @@ namespace Business.Concrete
         [ValidationAspect(typeof(RentalValidator))]
         [CacheRemoveAspect("IRentalService.Get")]
         [TransactionScopeAspect]
+        [PerformanceAspect(15)]
         public IResult Add(Rental rental)
         {
             _rentalDal.Add(rental);
@@ -35,6 +37,7 @@ namespace Business.Concrete
         [ValidationAspect(typeof(RentalValidator))]
         [CacheRemoveAspect("IRentalService.Get")]
         [TransactionScopeAspect]
+        [PerformanceAspect(10)]
         public IResult Delete(Rental rental)
         {
             _rentalDal.Delete(rental);
@@ -42,12 +45,14 @@ namespace Business.Concrete
         }
 
         [CacheAspect]
+        [PerformanceAspect(15)]
         public IDataResult<List<Rental>> GetAll()
         {
             return new SuccessDataResult<List<Rental>>(_rentalDal.GetAll());
         }
 
         [CacheAspect]
+        [PerformanceAspect(15)]
         public IDataResult<Rental> GetById(int id)
         {
             return new SuccessDataResult<Rental>(_rentalDal.Get(r => r.Id == id));
@@ -56,6 +61,7 @@ namespace Business.Concrete
         [ValidationAspect(typeof(RentalValidator))]
         [CacheRemoveAspect("IRentalService.Get")]
         [TransactionScopeAspect]
+        [PerformanceAspect(10)]
         public IResult Update(Rental rental)
         {
             _rentalDal.Update(rental);

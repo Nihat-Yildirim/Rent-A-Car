@@ -2,6 +2,7 @@
 using Business.BusinessAspects.Autofac;
 using Business.ValidationRules.FluentValidation;
 using Core.Aspect.Autofac.Caching;
+using Core.Aspect.Autofac.Performance;
 using Core.Aspect.Autofac.Transaction;
 using Core.Aspect.Autofac.Validation;
 using Core.Utilities.Results.Abstract;
@@ -28,6 +29,7 @@ namespace Business.Concrete
         [SecuredOperation("CarAdd")]
         [CacheRemoveAspect("ICarService.Get")]
         [TransactionScopeAspect]
+        [PerformanceAspect(10)]
         public IResult Add(Car car)
         {
             _carDal.Add(car);
@@ -37,6 +39,7 @@ namespace Business.Concrete
         [ValidationAspect(typeof(CarValidator))]
         [CacheRemoveAspect("ICarService.Get")]
         [TransactionScopeAspect]
+        [PerformanceAspect(10)]
         public IResult Delete(Car car)
         {
             _carDal.Delete(car);
@@ -44,12 +47,14 @@ namespace Business.Concrete
         }
 
         [CacheAspect]
+        [PerformanceAspect(15)]
         public IDataResult<List<Car>> GetAll()
         {
             return new SuccessDataResult<List<Car>>(_carDal.GetAll());
         }
 
         [CacheAspect]
+        [PerformanceAspect(15)]
         public IDataResult<Car> GetById(int id)
         {
             return new SuccessDataResult<Car>(_carDal.Get(c=>c.Id==id));
@@ -58,6 +63,7 @@ namespace Business.Concrete
         [ValidationAspect(typeof(CarValidator))]
         [CacheRemoveAspect("ICarService.Get")]
         [TransactionScopeAspect]
+        [PerformanceAspect(10)]
         public IResult Update(Car car)
         {
             _carDal.Update(car);

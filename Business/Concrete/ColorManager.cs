@@ -2,6 +2,7 @@
 using Business.BusinessAspects.Autofac;
 using Business.ValidationRules.FluentValidation;
 using Core.Aspect.Autofac.Caching;
+using Core.Aspect.Autofac.Performance;
 using Core.Aspect.Autofac.Transaction;
 using Core.Aspect.Autofac.Validation;
 using Core.Utilities.Results.Abstract;
@@ -26,9 +27,10 @@ namespace Business.Concrete
         }
 
         [ValidationAspect(typeof(ColorValidator))]
-        [SecuredOperation("color.add")]
+        //[SecuredOperation("color.add")]
         [CacheRemoveAspect("IColorService.Get")]
         [TransactionScopeAspect]
+        [PerformanceAspect(10)]
         public IResult Add(Color color)
         {
             _colorDal.Add(color);
@@ -38,6 +40,7 @@ namespace Business.Concrete
         [ValidationAspect(typeof(ColorValidator))]
         [CacheRemoveAspect("IColorService.Get")]
         [TransactionScopeAspect]
+        [PerformanceAspect(10)]
         public IResult Delete(Color color)
         {
             _colorDal.Delete(color);
@@ -45,12 +48,14 @@ namespace Business.Concrete
         }
 
         [CacheAspect]
+        [PerformanceAspect(15)]
         public IDataResult<List<Color>> GetAll()
         {
             return new SuccessDataResult<List<Color>>(_colorDal.GetAll());
         }
 
         [CacheAspect]
+        [PerformanceAspect(15)]
         public IDataResult<Color> GetById(int id)
         {
             return new SuccessDataResult<Color>(_colorDal.Get(c => c.Id == id));
@@ -58,6 +63,7 @@ namespace Business.Concrete
 
         [ValidationAspect(typeof(ColorValidator))]
         [CacheRemoveAspect("IColorService.Get")]
+        [PerformanceAspect(10)]
         public IResult Update(Color color)
         {
             _colorDal.Update(color);
