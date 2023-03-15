@@ -13,15 +13,17 @@ namespace Core.CrossCuttingConcerns.Caching.Microsoft
     public class MemoryCacheManager : ICacheManager
     {
         IMemoryCache _memoryCache;
-
+        private List<string> _keys;
         public MemoryCacheManager()
         {
             _memoryCache = ServiceTool.ServiceProvider.GetService<IMemoryCache>();
+            _keys= new List<string>();
         }
 
         public void Add(string key, object value, int duration)
         {
             _memoryCache.Set(key,value,TimeSpan.FromMinutes(duration)); 
+            _keys.Add(key);
         }
 
         public object Get(string key)
@@ -37,26 +39,18 @@ namespace Core.CrossCuttingConcerns.Caching.Microsoft
         public void Remove(string key)
         {
             _memoryCache.Remove(key);
+            _keys.Remove(key);
         }
 
         public void RemoveByPattern(string pattern)
         {
-            var cacheEntriesCollectionDefinition = typeof(MemoryCache).GetProperty("EntriesCollection", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-            var cacheEntriesCollection = cacheEntriesCollectionDefinition.GetValue(_memoryCache) as dynamic;
-            List<ICacheEntry> cacheCollectionValues = new List<ICacheEntry>();
-
-            foreach (var cacheItem in cacheEntriesCollection)
-            {
-                ICacheEntry cacheItemValue = cacheItem.GetType().GetProperty("Value").GetValue(cacheItem, null);
-                cacheCollectionValues.Add(cacheItemValue);
-            }
-
             var regex = new Regex(pattern, RegexOptions.Singleline | RegexOptions.Compiled | RegexOptions.IgnoreCase);
-            var keysToRemove = cacheCollectionValues.Where(d => regex.IsMatch(d.Key.ToString())).Select(d => d.Key).ToList();
+            var keysToRemove = _keys.Where(d => regex.IsMatch(d.ToString())).Select(d => d).ToList();
 
             foreach (var key in keysToRemove)
             {
                 _memoryCache.Remove(key);
+                _keys.Remove(key);
             }
         }
     }
