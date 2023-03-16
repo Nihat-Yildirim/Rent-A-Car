@@ -1,0 +1,17 @@
+D:\Rent-A-Car\DataAccess\bin\Debug\net7.0\DataAccess.deps.json
+D:\Rent-A-Car\DataAccess\bin\Debug\net7.0\DataAccess.dll
+D:\Rent-A-Car\DataAccess\bin\Debug\net7.0\DataAccess.pdb
+D:\Rent-A-Car\DataAccess\bin\Debug\net7.0\Core.dll
+D:\Rent-A-Car\DataAccess\bin\Debug\net7.0\Entities.dll
+D:\Rent-A-Car\DataAccess\bin\Debug\net7.0\Entities.pdb
+D:\Rent-A-Car\DataAccess\bin\Debug\net7.0\Core.pdb
+D:\Rent-A-Car\DataAccess\obj\Debug\net7.0\DataAccess.csproj.AssemblyReference.cache
+D:\Rent-A-Car\DataAccess\obj\Debug\net7.0\DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+D:\Rent-A-Car\DataAccess\obj\Debug\net7.0\DataAccess.AssemblyInfoInputs.cache
+D:\Rent-A-Car\DataAccess\obj\Debug\net7.0\DataAccess.AssemblyInfo.cs
+D:\Rent-A-Car\DataAccess\obj\Debug\net7.0\DataAccess.csproj.CoreCompileInputs.cache
+D:\Rent-A-Car\DataAccess\obj\Debug\net7.0\DataAccess.csproj.CopyComplete
+D:\Rent-A-Car\DataAccess\obj\Debug\net7.0\DataAccess.dll
+D:\Rent-A-Car\DataAccess\obj\Debug\net7.0\refint\DataAccess.dll
+D:\Rent-A-Car\DataAccess\obj\Debug\net7.0\DataAccess.pdb
+D:\Rent-A-Car\DataAccess\obj\Debug\net7.0\ref\DataAccess.dll

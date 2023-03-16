@@ -27,7 +27,7 @@ namespace Business.Concrete
         }
 
         [ValidationAspect(typeof(ColorValidator))]
-        //[SecuredOperation("color.add")]
+        [SecuredOperation("color.add")]
         [CacheRemoveAspect("IColorService.Get")]
         [TransactionScopeAspect]
         [PerformanceAspect(10)]
