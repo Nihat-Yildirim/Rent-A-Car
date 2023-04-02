@@ -39,6 +39,8 @@ app.UseAuthentication();
 
 app.UseAuthorization();
 
+app.AddGlobalExceptionHandler();
+
 app.MapControllers();
 
 app.Run();

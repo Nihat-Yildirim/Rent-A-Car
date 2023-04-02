@@ -1,4 +1,5 @@
 ﻿using Castle.DynamicProxy;
+using Core.Exceptions.Concrete;
 using Core.Extensions;
 using Core.Utilities.Interceptors;
 using Core.Utilities.IOC;
@@ -34,7 +35,7 @@ namespace Business.BusinessAspects.Autofac
                 }
             }
 
-            throw new Exception("Yetkiniz yetersiz");
+            throw new AuthorizationException("Kullanıcı yetkisi yetersiz !!");
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using FluentValidation;
+﻿using Core.Exceptions.Concrete;
+using FluentValidation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +16,7 @@ namespace Core.CrossCuttingConcerns.Validation
             var result = validator.Validate(context);
             if (!result.IsValid)
             {
-                throw new Exception("Hatalı data");
+                throw new ValidatorException(String.Join(",",result.Errors.Select(e => e.ErrorMessage)));
             }
         }
     }
