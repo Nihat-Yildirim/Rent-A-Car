@@ -8,39 +8,20 @@ using Core.Utilities.Security.Encryption;
 using Core.Utilities.Security.JWT;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using WepAPI.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
+var tokenOptions = builder.Configuration.GetSection("TokenOptions").Get<TokenOptions>();
+
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
-builder.Services.AddCors(options =>
-    options.AddPolicy("myclients", builder =>
-    builder.WithOrigins("https://localhost:7051").AllowAnyMethod().AllowAnyHeader()));
-
+builder.Services.ConfigureAuthentication(tokenOptions);
+builder.Services.ConfigureCors();
 builder.Services.AddDependencyResolvers(new ICoreModule[]{ new CoreModule()});
+builder.Host.ConfigureAutofacProviderFactory();
 
-var tokenOptions = builder.Configuration.GetSection("TokenOptions").Get<TokenOptions>();
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
-{
-    options.TokenValidationParameters = new TokenValidationParameters
-    {
-        ValidateIssuer = true,
-        ValidateAudience = true,
-        ValidateLifetime = true,
-        ValidIssuer = tokenOptions.Issuer,
-        ValidAudience = tokenOptions.Audience,
-        ValidateIssuerSigningKey = true,
-        IssuerSigningKey = SecurityKeyHelper.CreateSecurityKey(tokenOptions.SecurityKey)
-    };
-});
-
-builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory())
-    .ConfigureContainer<ContainerBuilder>(builder =>
-    {
-        builder.RegisterModule(new AutoFacBusinessModule());
-    });
 
 var app = builder.Build();
 

@@ -31,6 +31,7 @@ namespace WepAPI.Controllers
             {
                 return BadRequest("Token oluşturulamadı");
             }
+
             return Ok(result.Data);
         }
 

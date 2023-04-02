@@ -14,6 +14,7 @@ namespace Core.CrossCuttingConcerns.Caching.Microsoft
     {
         IMemoryCache _memoryCache;
         private List<string> _keys;
+
         public MemoryCacheManager()
         {
             _memoryCache = ServiceTool.ServiceProvider.GetService<IMemoryCache>();
